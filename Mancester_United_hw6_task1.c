@@ -18,9 +18,13 @@
 
 /* Function Prototypes */
 
+
 /* Main Program */
 int main(int argc, char *argv[])
 {
+	int x, y;
+	printf("Enter the Rectangular coordinates x and y: ");
+	scanf("%d %d", &x, &y);
 
 	return 0;
 }
