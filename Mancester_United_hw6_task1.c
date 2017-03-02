@@ -16,6 +16,7 @@
 #include <time.h>
 
 
+<<<<<<< HEAD
 /* Function Prototypes */
 void Usage(void);
 /* Main Program */
@@ -31,6 +32,15 @@ int main(int argc, char *argv[])
 	{
 		Usage();
 	}
+=======
+
+/* Main Program */
+int main(int argc, char *argv[])
+{
+	int x, y;
+	printf("Enter the Rectangular coordinates x and y: ");
+	scanf("%d %d", &x, &y);
+>>>>>>> d01f3112a052297ca3710ca62e58b4c14f4e6c1f
 
 	return 0;
 }
