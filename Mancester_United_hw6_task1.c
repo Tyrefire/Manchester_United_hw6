@@ -14,18 +14,34 @@
 #include <stdio.h>		/* For Standard I/O */
 #include <stdlib.h>
 #include <time.h>
-#include <mathlib.h>
+
 
 /* Function Prototypes */
-
+void Usage(void);
 /* Main Program */
 int main(int argc, char *argv[])
 {
+	printf("Usage ./task1 x-coordinate y-coordinate\n");
+	if( argc != 3)
+	{
+		printf("both params are required.\nmust be floating point\n");
+		exit(2);
+	}
+	else
+	{
+		Usage();
+	}
 
 	return 0;
 }
 
 
 /* Function Defenitions */
+void Usage(void)
+{
+	printf("The polar coordinates are:\n");
+
+	return;
+}
 
 
