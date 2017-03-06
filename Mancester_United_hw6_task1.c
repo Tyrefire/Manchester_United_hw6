@@ -17,10 +17,17 @@
 
 /* Function Prototypes */
 void Usage(void);
+<<<<<<< HEAD
 void GetRec(double* x, double* y);
+=======
+int AskQ(void);
+
+>>>>>>> 9b5212dcb3677e1e9ebedfa31e89bf91b22eb0df
 /* Main Program */
 int main(int argc, char *argv[])
 {
+	int a;
+
 	printf("Usage ./task1 x-coordinate y-coordinate\n\n");
 	if( argc != 3)
 	{
@@ -31,11 +38,16 @@ int main(int argc, char *argv[])
 	{
 		Usage();
 	}
-	
-	int x, y;
-	printf("Enter the Rectangular coordinates x and y: ");
-	scanf("%d %d", &x, &y);
 
+	a = AskQ();
+	if(a == 1)
+	{
+	main(argc, argv);
+	}
+	else
+	{
+	printf("Done!");
+	}
 
 	return 0;
 }
@@ -52,3 +64,23 @@ void GetRec(double* x, double* y)
 }
 
 
+int AskQ(void)
+{
+	int j;
+	printf("y = 1, n = 0\n");
+	printf("Do you want to continue?\n");
+	scanf("%d", &j);
+	if(j == 1 || j == 0)
+	{
+		return(j);
+	}
+	else
+	{
+		printf("Does not compute!\n");
+		printf("Error!\n");
+		printf("\n\n\nSoft Reboot....\n");
+		AskQ();
+	}
+
+	return j;
+}
