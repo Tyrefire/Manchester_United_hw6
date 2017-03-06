@@ -17,6 +17,7 @@
 
 /* Function Prototypes */
 void Usage(void);
+void GetRec(double* x, double* y);
 /* Main Program */
 int main(int argc, char *argv[])
 {
@@ -44,6 +45,10 @@ void Usage(void)
 	printf("The polar coordinates are:\n\n");
 
 	return;
+}
+void GetRec(double* x, double* y)
+{
+	
 }
 
 
