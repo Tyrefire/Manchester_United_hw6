@@ -31,21 +31,26 @@ int main(int argc, char *argv[])
 
 	x = atof(argv[1]);
 	y = atof(argv[2]);
-	printf("Usage ./task1 x-coordinate y-coordinate\n");
-	if( argc != 3 || x == 0)
+
+	if(y == 0.0)
+	{
+		Usage();
+	}
+	if(argc != 3 || x == 0.0)
 	{
 		x = atof(argv[0]);
 		printf("both params are required.\nmust be floating point\n");
 		exit(2);
+		Usage();
 	}
 	else
 	{
-		Usage();
+		printf("The polar coordinates are:\n");
 		Polar(x, y, &r, &theta);
 		ShowIt(r, theta);
+		a = AskQ();
 	}
 
-		a = AskQ();
 	do
 	{
 		if(a == 0)
@@ -64,14 +69,15 @@ int main(int argc, char *argv[])
 
 	printf("Thank you for using our calculator!\n");
 
-
 	return 0;
 }
 
 /* Function Defenitions */
 void Usage(void)
 {
-	printf("The polar coordinates are:\n");
+	printf("Usage ./task1 x-coordinate y-coordinate\n");
+	printf("both params are required.\nmust be floating point\n");
+	exit(1);
 
 	return;
 }
