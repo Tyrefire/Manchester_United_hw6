@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	x = atof(argv[1]);
 	y = atof(argv[2]);
 	printf("Usage ./task1 x-coordinate y-coordinate\n");
-	if( argc != 3)
+	if( argc != 3 || x == 0)
 	{
 		printf("both params are required.\nmust be floating point\n");
 		exit(2);
