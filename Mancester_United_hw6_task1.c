@@ -14,18 +14,21 @@
 #include <stdio.h>		/* For Standard I/O */
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 /* Function Prototypes */
 void Usage(void);
 void GetRec(double* x, double* y);
 int AskQ(void);
+void ShowIt(double r, double ang);
 void Polar(double x, double y, double* r, double* theta);
+
 /* Main Program */
 int main(int argc, char *argv[])
 {
 	int a;
 	double x, y;
-	//double r, theta;
+	double r = 0.0, theta = 0.0;
 
 	printf("Usage ./task1 x-coordinate y-coordinate\n\n");
 	if( argc != 3)
@@ -36,12 +39,16 @@ int main(int argc, char *argv[])
 	else
 	{
 		Usage();
+		Polar(x, y, &r, &theta);
+		ShowIt(r, theta);
 	}
 
 	a = AskQ();
 	if(a == 1)
 	{
 		GetRec(&x, &y);
+		Polar(x, y, &r, &theta);
+		ShowIt(r, theta);
 	}
 	else
 	{
@@ -50,6 +57,7 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
+
 /* Function Defenitions */
 void Usage(void)
 {
@@ -57,6 +65,7 @@ void Usage(void)
 
 	return;
 }
+
 void GetRec(double* x, double* y)
 {
 	printf("Enter the x coordinate: \n");
@@ -66,6 +75,7 @@ void GetRec(double* x, double* y)
 	return;
 
 }
+
 int AskQ(void)
 {
 	int j;
@@ -86,7 +96,26 @@ int AskQ(void)
 
 	return j;
 }
+
 void Polar(double x, double y, double* r, double* theta)
 {
-	
+	double a, b;
+	a = ((x * x)+(y * y));
+	b = y / x;
+
+	(*r) = sqrt(a);
+	(*theta) = atan(b);
+
+	return;
+}
+
+void ShowIt(double r, double theta)
+{
+	double rad = r;
+	double ang = theta;
+
+	printf("Distance from the origin: %lf\n", rad);
+	printf("Angle (in degrees) from x-axis: %lf\n", ang);
+
+	return;
 }
