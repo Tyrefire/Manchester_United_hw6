@@ -29,8 +29,9 @@ int main(int argc, char *argv[])
 	int a;
 	double x, y;
 	double r = 0.0, theta = 0.0;
-	x = argc;
-	y = argc;
+
+	x = atof(argv[1]);
+	y = atof(argv[2]);
 	printf("Usage ./task1 x-coordinate y-coordinate\n");
 	if( argc != 3)
 	{
@@ -44,17 +45,25 @@ int main(int argc, char *argv[])
 		ShowIt(r, theta);
 	}
 
-	a = AskQ();
-	if(a == 1)
+		a = AskQ();
+	do
 	{
-		GetRec(&x, &y);
-		Polar(x, y, &r, &theta);
-		ShowIt(r, theta);
+		if(a == 0)
+		{
+			break;
+		}
+		else
+		{
+			GetRec(&x, &y);
+			Polar(x, y, &r, &theta);
+			ShowIt(r, theta);
+			a = AskQ();
+		}
 	}
-	else
-	{
-		printf("Done!\n");
-	}
+	while(a == 1);
+
+	printf("Done!\n");
+
 
 	return 0;
 }
@@ -106,6 +115,7 @@ void Polar(double x, double y, double* r, double* theta)
 
 	(*r) = sqrt(a);
 	(*theta) = atan(b);
+	(*theta) = (*theta) * 180 / 3.14;
 
 	return;
 }
