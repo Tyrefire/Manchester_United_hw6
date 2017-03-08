@@ -17,16 +17,15 @@
 
 /* Function Prototypes */
 void Usage(void);
-<<<<<<< HEAD
 void GetRec(double* x, double* y);
-=======
 int AskQ(void);
-
->>>>>>> 9b5212dcb3677e1e9ebedfa31e89bf91b22eb0df
+void Polar(double x, double y, double* r, double* theta);
 /* Main Program */
 int main(int argc, char *argv[])
 {
 	int a;
+	double x, y;
+	//double r, theta;
 
 	printf("Usage ./task1 x-coordinate y-coordinate\n\n");
 	if( argc != 3)
@@ -42,11 +41,11 @@ int main(int argc, char *argv[])
 	a = AskQ();
 	if(a == 1)
 	{
-	main(argc, argv);
+		GetRec(&x, &y);
 	}
 	else
 	{
-	printf("Done!");
+		printf("Done!\n");
 	}
 
 	return 0;
@@ -54,21 +53,24 @@ int main(int argc, char *argv[])
 /* Function Defenitions */
 void Usage(void)
 {
-	printf("The polar coordinates are:\n\n");
+	printf("The polar coordinates are:\n");
 
 	return;
 }
 void GetRec(double* x, double* y)
 {
-	
+	printf("Enter the x coordinate: \n");
+	scanf("%lf", &*x);
+	printf("Enter the y coordinate: \n");
+	scanf("%lf", &*y);
+	return;
+
 }
-
-
 int AskQ(void)
 {
 	int j;
-	printf("y = 1, n = 0\n");
 	printf("Do you want to continue?\n");
+	printf("y = 1, n = 0\n");
 	scanf("%d", &j);
 	if(j == 1 || j == 0)
 	{
@@ -83,4 +85,8 @@ int AskQ(void)
 	}
 
 	return j;
+}
+void Polar(double x, double y, double* r, double* theta)
+{
+	
 }
