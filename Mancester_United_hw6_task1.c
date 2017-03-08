@@ -102,7 +102,7 @@ void Polar(double x, double y, double* r, double* theta)
 {
 	double a, b;
 	a = ((x * x)+(y * y));
-	b = y / x;
+	b = (y / x);
 
 	(*r) = sqrt(a);
 	(*theta) = atan(b);
