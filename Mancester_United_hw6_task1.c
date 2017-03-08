@@ -32,10 +32,10 @@ int main(int argc, char *argv[])
 
 	x = atof(argv[1]);
 	y = atof(argv[2]);
-	printf("Usage ./task1 x-coordinate y-coordinate\n\n");
+	printf("Usage ./task1 x-coordinate y-coordinate\n");
 	if( argc != 3)
 	{
-		printf("both params are required.\n\nmust be floating point\n\n");
+		printf("both params are required.\nmust be floating point\n");
 		exit(2);
 	}
 	else
@@ -127,6 +127,5 @@ void ShowIt(double r, double theta)
 
 	printf("Distance from the origin: %lf\n", rad);
 	printf("Angle (in degrees) from x-axis: %lf\n", ang);
-
 	return;
 }
