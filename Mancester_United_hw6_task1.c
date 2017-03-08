@@ -13,7 +13,6 @@
  */
 #include <stdio.h>		/* For Standard I/O */
 #include <stdlib.h>
-#include <time.h>
 #include <math.h>
 
 /* Function Prototypes */
@@ -35,6 +34,7 @@ int main(int argc, char *argv[])
 	printf("Usage ./task1 x-coordinate y-coordinate\n");
 	if( argc != 3 || x == 0)
 	{
+		x = atof(argv[0]);
 		printf("both params are required.\nmust be floating point\n");
 		exit(2);
 	}
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 	}
 	while(a == 1);
 
-	printf("Done!\n");
+	printf("Thank you for using our calculator!\n");
 
 
 	return 0;
