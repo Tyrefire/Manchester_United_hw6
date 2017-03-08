@@ -14,6 +14,7 @@
 #include <stdio.h>		/* For Standard I/O */
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 /* Function Prototypes */
 void Usage(void);
@@ -25,7 +26,7 @@ int main(int argc, char *argv[])
 {
 	int a;
 	double x, y;
-	//double r, theta;
+	double r, theta;
 
 	printf("Usage ./task1 x-coordinate y-coordinate\n\n");
 	if( argc != 3)
@@ -42,6 +43,7 @@ int main(int argc, char *argv[])
 	if(a == 1)
 	{
 		GetRec(&x, &y);
+		Polar(x, y, &r, &theta);
 	}
 	else
 	{
@@ -88,5 +90,9 @@ int AskQ(void)
 }
 void Polar(double x, double y, double* r, double* theta)
 {
-	
+	r = double* sqrt((x*x)+(y*y));
+	theta = atan(y/x);
+	printf("Distance from origin: %p\n", &*r);
+	printf("Angle (in degrees) from x-axis: %p\n", &*theta);
+	return;
 }
