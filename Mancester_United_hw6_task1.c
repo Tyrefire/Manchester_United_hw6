@@ -28,16 +28,13 @@ int main(int argc, char *argv[])
 {
 	int a;
 	double x, y;
-<<<<<<< HEAD
-	double r, theta;
-=======
 	double r = 0.0, theta = 0.0;
->>>>>>> f44f9aa176aec1aa0209ce52363d47ac0787dd3f
-
-	printf("Usage ./task1 x-coordinate y-coordinate\n\n");
+	x = argc;
+	y = argc;
+	printf("Usage ./task1 x-coordinate y-coordinate\n");
 	if( argc != 3)
 	{
-		printf("both params are required.\n\nmust be floating point\n\n");
+		printf("both params are required.\nmust be floating point\n");
 		exit(2);
 	}
 	else
@@ -52,10 +49,7 @@ int main(int argc, char *argv[])
 	{
 		GetRec(&x, &y);
 		Polar(x, y, &r, &theta);
-<<<<<<< HEAD
-=======
 		ShowIt(r, theta);
->>>>>>> f44f9aa176aec1aa0209ce52363d47ac0787dd3f
 	}
 	else
 	{
@@ -106,12 +100,6 @@ int AskQ(void)
 
 void Polar(double x, double y, double* r, double* theta)
 {
-<<<<<<< HEAD
-	r = double* sqrt((x*x)+(y*y));
-	theta = atan(y/x);
-	printf("Distance from origin: %p\n", &*r);
-	printf("Angle (in degrees) from x-axis: %p\n", &*theta);
-=======
 	double a, b;
 	a = ((x * x)+(y * y));
 	b = y / x;
@@ -129,7 +117,5 @@ void ShowIt(double r, double theta)
 
 	printf("Distance from the origin: %lf\n", rad);
 	printf("Angle (in degrees) from x-axis: %lf\n", ang);
-
->>>>>>> f44f9aa176aec1aa0209ce52363d47ac0787dd3f
 	return;
 }
