@@ -30,21 +30,27 @@ int main(int argc, char *argv[])
 	double x, y;
 	double r = 0.0, theta = 0.0;
 
-	x = atof(argv[1]);
-	y = atof(argv[2]);
+	x = atof(argv[2]);
+	y = atof(argv[3]);
+
 	printf("Usage ./task1 x-coordinate y-coordinate\n");
-	if( argc != 3)
+	if(argc != 3)
 	{
-		printf("both params are required.\nmust be floating point\n");
-		exit(2);
-	}
-	else
-	{
-		Usage();
-		Polar(x, y, &r, &theta);
-		ShowIt(r, theta);
+		if(x == 0.0 || y == 0.0)
+		{
+			Usage();
+		}
+		else
+		{
+			Usage();
+		}
 	}
 
+	else
+	{
+		printf("The polar coordinates are:\n");
+		Polar(x, y, &r, &theta);
+		ShowIt(r, theta);
 		a = AskQ();
 	do
 	{
@@ -61,6 +67,8 @@ int main(int argc, char *argv[])
 		}
 	}
 	while(a == 1);
+	}
+
 
 	printf("Done!\n");
 
@@ -71,7 +79,8 @@ int main(int argc, char *argv[])
 /* Function Defenitions */
 void Usage(void)
 {
-	printf("The polar coordinates are:\n");
+	printf("both params are required.\nmust be floating point\n");
+	exit(1);
 
 	return;
 }
