@@ -20,13 +20,19 @@
 void Usage(void);
 void GetRec(double* x, double* y);
 int AskQ(void);
+void ShowIt(double r, double ang);
 void Polar(double x, double y, double* r, double* theta);
+
 /* Main Program */
 int main(int argc, char *argv[])
 {
 	int a;
 	double x, y;
+<<<<<<< HEAD
 	double r, theta;
+=======
+	double r = 0.0, theta = 0.0;
+>>>>>>> f44f9aa176aec1aa0209ce52363d47ac0787dd3f
 
 	printf("Usage ./task1 x-coordinate y-coordinate\n\n");
 	if( argc != 3)
@@ -37,6 +43,8 @@ int main(int argc, char *argv[])
 	else
 	{
 		Usage();
+		Polar(x, y, &r, &theta);
+		ShowIt(r, theta);
 	}
 
 	a = AskQ();
@@ -44,6 +52,10 @@ int main(int argc, char *argv[])
 	{
 		GetRec(&x, &y);
 		Polar(x, y, &r, &theta);
+<<<<<<< HEAD
+=======
+		ShowIt(r, theta);
+>>>>>>> f44f9aa176aec1aa0209ce52363d47ac0787dd3f
 	}
 	else
 	{
@@ -52,6 +64,7 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
+
 /* Function Defenitions */
 void Usage(void)
 {
@@ -59,6 +72,7 @@ void Usage(void)
 
 	return;
 }
+
 void GetRec(double* x, double* y)
 {
 	printf("Enter the x coordinate: \n");
@@ -68,6 +82,7 @@ void GetRec(double* x, double* y)
 	return;
 
 }
+
 int AskQ(void)
 {
 	int j;
@@ -88,11 +103,33 @@ int AskQ(void)
 
 	return j;
 }
+
 void Polar(double x, double y, double* r, double* theta)
 {
+<<<<<<< HEAD
 	r = double* sqrt((x*x)+(y*y));
 	theta = atan(y/x);
 	printf("Distance from origin: %p\n", &*r);
 	printf("Angle (in degrees) from x-axis: %p\n", &*theta);
+=======
+	double a, b;
+	a = ((x * x)+(y * y));
+	b = y / x;
+
+	(*r) = sqrt(a);
+	(*theta) = atan(b);
+
+	return;
+}
+
+void ShowIt(double r, double theta)
+{
+	double rad = r;
+	double ang = theta;
+
+	printf("Distance from the origin: %lf\n", rad);
+	printf("Angle (in degrees) from x-axis: %lf\n", ang);
+
+>>>>>>> f44f9aa176aec1aa0209ce52363d47ac0787dd3f
 	return;
 }
